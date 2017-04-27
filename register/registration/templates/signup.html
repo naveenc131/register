@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Register | {{ block.super }}{% endblock %}
+
+{% block headline %}<h1>Register for the PyCon Survival Guide</h1>{% endblock %}
+
+{% block content %}
+    <div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+    <form method='POST' action=''>{% csrf_token %}
+      {{ form.non_field_errors }}
+     <div class = 'input-group'>
+	      {{form.username.errors}}
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+	      {{form.username}}
+     </div>
+
+     <div class = 'input-group'>
+	      {{form.email.errors}}
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+	      {{form.email}}
+     </div>
+
+      <div class = 'input-group'>
+	      {{form.first_name.errors}}
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+	      {{form.first_name}}
+     </div>
+
+      <div class = 'input-group'>
+	      {{form.last_name.errors}}
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+	      {{form.last_name}}
+     </div>
+
+      <div class = 'input-group'>
+	      {{form.password1.errors}}
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+	      {{form.password1}}
+     </div>
+
+      <div class = 'input-group'>
+	      {{form.password2.errors}}
+	      	<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+	      {{form.password2}}
+     </div>
+
+        <input type='submit' value='Save' class='btn btn-primary' />
+
+
+    </form>
+    <a href="/forget/" class="btn btn-link">Forget Password</a>
+</div>
+</div>
+{% endblock %}
